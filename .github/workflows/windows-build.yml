@@ -1,0 +1,44 @@
+name: Windows EXE Build
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Build with Maven
+        run: mvn clean package
+
+      - name: Create EXE with jpackage
+        run: >
+          jpackage
+          --input target
+          --name PomodoroTimer
+          --main-jar PomodoroTimer.jar
+          --main-class com.yourpackage.MainApp
+          --type exe
+          --icon icon.ico
+          --win-menu
+          --win-shortcut
+          --dest installer
+
+      - name: Upload .exe to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: installer/PomodoroTimer.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
