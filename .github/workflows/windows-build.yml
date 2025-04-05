@@ -28,7 +28,7 @@ jobs:
           --input target
           --name PomodoroTimer
           --main-jar PomodoroTimer.jar
-          --main-class com.yourpackage.MainApp
+          --main-class org.lpk.PomodoroApp
           --type exe
           --icon icon.ico
           --win-menu
