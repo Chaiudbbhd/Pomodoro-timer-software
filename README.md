@@ -46,8 +46,11 @@ npm start
 
 Access the app at http://localhost:3000
 
-📸 Screenshots
-(Add screenshots of your app here)
+## 📸 Demo Video
+
+Check out the live demo of the Pomodoro Timer in action:  
+[🔗 Watch on LinkedIn](https://www.linkedin.com/posts/prasanna-kumar-g-3377a825a_studentdeveloper-pomodorotimer-macos-activity-7311794529676795905-wxU5?utm_source=share&utm_medium=mem_)
+
 
 🌟 About the Pomodoro Technique
 
